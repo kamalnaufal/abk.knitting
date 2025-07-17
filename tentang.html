@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABK Knitting</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 10px 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
+
+
+
+
+.hero {
+  display: flex;
+  align-items: flex-start; /* arah vertikal atas */
+  justify-content: flex-start; /* arah horizontal kiri */
+  height: 100vh;
+  padding: 90px 20px 0%; /* atas, kanan & kiri */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('banner4.png') center/cover no-repeat;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero {
+    padding-top: 100px; /* beri ruang lebih biar tak ketutup header */
+    padding-left: 16px;  /* sejajar dengan header di HP */
+    padding-right: 16px;
+  }
+}
+
+    .stats-section {
+  background: #1c1c1c;
+  text-align: center;
+  padding: 60px 20px; /* <--- tambahkan padding kiri-kanan */
+}
+
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 40px 16px; /* di HP padding lebih kecil tapi tetap ada */
+  }
+}
+
+    .stats-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #936897;
+    }
+    .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* default 4 kolom desktop */
+  gap: 20px;
+  justify-items: center;
+  
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr); /* jadi 2 kolom di HP */
+    gap: 20px;
+    justify-content: center;
+  justify-items: center;
+  }
+}
+    .stats-box {
+        width: 100%;
+    max-width: 150px; /* batasi lebar maksimal */
+    text-align: center;
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      min-width: 200px;
+    }
+    .stats-box h3 {
+      font-size: 2rem;
+      color: #fff;
+    }
+    .stats-box p {
+      color: #ccc;
+      margin-top: 10px;
+    }
+    
+.tentang {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1a1a1a, #111);
+  color: #f0f0f0;
+}
+
+.tentang-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tentang-text {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.tentang-text h2 {
+  font-size: 2rem;
+  color: #936897;
+  margin-bottom: 15px;
+}
+
+.tentang-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #ddd;
+  text-align: justify;
+}
+
+.tentang-img {
+  flex: 1 1 40%;
+  min-width: 250px;
+  text-align: center;
+}
+
+.tentang-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.komitmen {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #1c1c1c, #111);
+  color: #f0f0f0;
+}
+
+.komitmen-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.komitmen-img {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.komitmen-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.komitmen-text {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.komitmen-text h2 {
+  font-size: 2rem;
+  color: #936897;
+  margin-bottom: 16px;
+}
+
+.komitmen-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;
+  color: #ddd;
+}
+
+.alasan {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  padding: 60px 20px;
+}
+
+.alasan-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.alasan-text {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.alasan-text h2 {
+  font-size: 2rem;
+  color: #936897;
+  margin-bottom: 16px;
+}
+
+.alasan-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.alasan-list {
+  list-style: none;
+  padding: 0;
+}
+
+.alasan-list li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.alasan-list i {
+  color: #25D366;
+  margin-right: 10px;
+}
+
+.alasan-img {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.alasan-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+
+      .konsultasi-section, .footer {
+      padding: 60px 20px;
+      text-align: center;
+    }
+      .konsultasi-section h2 {
+      font-size: 2rem;
+      color: #936897;
+      margin-bottom: 20px;
+    }
+      .konsultasi-section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .wa-button {
+      margin-top: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .footer {
+  background: #000;
+  color: #ccc;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand,
+.footer-nav,
+.footer-sosmed {
+  flex: 1 1 250px;
+  min-width: 220px;
+  text-align: center; /* Tengah judul dan ikon */
+}
+
+.footer-brand h3 {
+  color: #936897;
+  margin-bottom: 10px;
+}
+
+.footer-nav h4,
+.footer-sosmed h4 {
+  color: #936897;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  margin-bottom: 8px;
+}
+
+.footer-nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-nav ul li a:hover {
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  justify-content: center; /* Tengah ikon */
+}
+
+.social-icons a {
+  font-size: 18px;
+  color: #ccc;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 15px;
+  color: #777;
+  font-size: 13px;
+}
+
+/* Responsive: tampilan footer di HP */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-nav,
+  .footer-sosmed {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-nav ul li {
+    margin-bottom: 6px;
+  }
+}
+
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      nav.active {
+        display: flex;
+      } }
+  </style>
+</head>
+<body>
+ <header>
+  <h1>ABK Knitting</h1>
+  <nav id="navbar">
+    <a href="index.html">HOME</a>
+  </nav>
+</header>
+
+
+  <main>
+    <section class="hero" id="beranda">
+      <div>
+        <h2>HOME/TENTANG KAMI</h2>
+           </div>
+    </section>
+
+    <section class="stats-section">
+      <h2>Data Kami</h2>
+      <div class="stats-grid">
+        <div class="stats-box"><h3>150+</h3><p>Konsumen</p></div>
+        <div class="stats-box"><h3>200+</h3><p>Order Selesai</p></div>
+        <div class="stats-box"><h3>30+</h3><p>Karyawan</p></div>
+        <div class="stats-box"><h3>12</h3><p>Mesin Rajut</p></div>
+      </div>
+    </section>
+
+    <section class="tentang" id="tentang">
+  <div class="tentang-container">
+    <div class="tentang-text">
+      <h2>Tentang ABK Knitting</h2>
+      <p>ABK Knitting adalah penyedia jasa makloon rajut terpercaya dari Bandung. Kami melayani produksi cardigan, sweater, tas, syal, dan berbagai produk rajutan lainnya. Dengan kapasitas 1.500 pcs per bulan dan pengalaman lebih dari 5 tahun, kami siap membantu brand fashion dan UMKM.</p>
+    </div>
+    <div class="tentang-img">
+      <img src="banner4.png" alt="Mesin Rajut ABK" />
+    </div>
+  </div>
+</section>
+
+
+   <section class="komitmen" id="komitmen">
+  <div class="komitmen-container">
+    <div class="komitmen-img">
+      <img src="banner3.png" alt="Komitmen ABK Knitting">
+    </div>
+    <div class="komitmen-text">
+      <h2>Komitmen Kami</h2>
+      <p>
+        Kami berkomitmen menghadirkan produk rajutan dengan kualitas terbaik, harga terjangkau, dan pengiriman tepat waktu. Dengan semangat konsistensi dan pelayanan yang ramah, kepuasan pelanggan adalah prioritas utama kami.
+      </p>
+    </div>
+  </div>
+</section>
+
+   <section class="alasan" id="alasan">
+  <div class="alasan-container">
+    <div class="alasan-text">
+      <h2>Mengapa Kami Mitra yang Tepat?</h2>
+      <p>Kami bukan hanya penyedia jasa, tetapi juga partner pertumbuhan bisnis Anda. ABK Knitting mendukung Anda dengan:</p>
+      <ul class="alasan-list">
+        <li><i class="fas fa-check-circle"></i> Berpengalaman lebih dari 5 tahun di industri rajut</li>
+        <li><i class="fas fa-industry"></i> Kapasitas produksi hingga 1.500 pcs per bulan</li>
+        <li><i class="fas fa-clock"></i> Proses produksi tepat waktu dan efisien</li>
+        <li><i class="fas fa-star"></i> Hasil rajutan rapi, konsisten, dan berkualitas tinggi</li>
+        <li><i class="fas fa-handshake"></i> Siap kerja sama jangka panjang untuk brand fashion dan UMKM</li>
+      </ul>
+    </div>
+    <div class="alasan-img">
+      <img src="banner2.jpg" alt="Kemitraan ABK Knitting">
+    </div>
+  </div>
+</section>
+
+
+      <section class="konsultasi-section">
+  <h2><i class="fas fa-comments"></i> Yuk Konsultasikan Kebutuhan Anda</h2>
+  <p>Kami siap bantu Anda dalam proses makloon rajut — mulai dari perencanaan, produksi, hingga pengiriman. Hubungi kami langsung untuk konsultasi gratis via WhatsApp.</p>
+  <a href="https://wa.me/6281399981555" class="wa-button" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i> Hubungi Kami Sekarang
+  </a>
+</section>
+
+   <section class="footer" id="kontak">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>ABK Knitting</h3>
+      <p>Jasa makloon rajut sweater, cardigan, dan aksesoris dari Bandung dengan kualitas terbaik dan harga bersaing.</p>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Navigasi</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="#produksi">Produksi</a></li>
+        <li><a href="#portfolio">Portofolio</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-sosmed">
+      <h4>Ikuti Kami</h4>
+      <div class="social-icons">
+        <a href="https://wa.me/6281399981555" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/abk.knitting" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/abk.knitting" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://shopee.co.id/abk.knitting" target="_blank"><i class="fas fa-store"></i></a>
+        <a href="https://tiktok.com/@abk.knitting" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 ABK Knitting • All Rights Reserved</p>
+  </div>
+</section>
+  </main>
+</body>
+</html>
