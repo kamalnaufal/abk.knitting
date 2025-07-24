@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABK Knitting</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      margin: 4px 0;
+      width: 25px;
+      display: block;
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+
+.hero {
+  display: flex;
+  align-items: flex-start; /* arah vertikal atas */
+  justify-content: flex-start; /* arah horizontal kiri */
+  height: 100vh;
+  padding: 90px 20px 0%; /* atas, kanan & kiri */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('testi.jpeg') center/cover no-repeat;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero {
+    padding-top: 100px; /* beri ruang lebih biar tak ketutup header */
+    padding-left: 16px;  /* sejajar dengan header di HP */
+    padding-right: 16px;
+  }
+}
+
+.testimoni-section {
+  background-color: #1b1b1b;
+  padding: 60px 20px;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.testimoni-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #936897;
+}
+
+.testimoni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimoni-card {
+  background-color: #2a2a2a;
+  border-radius: 16px;
+  padding: 25px 20px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.testimoni-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimoni-card p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+.testimoni-footer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testimoni-footer img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.testimoni-footer strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.testimoni-footer small {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+
+.konsultasi-section {
+  background: linear-gradient(to right, #1c1c1c, #2a2a2a);
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 40px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.konsultasi-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.konsultasi-section p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+  line-height: 1.7;
+}
+
+.wa-button {
+  background-color: #25D366;
+  color: #fff;
+  font-size: 18px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+.wa-button i {
+  margin-right: 8px;
+}
+
+.wa-button:hover {
+  background-color: #1ebe5d;
+}
+
+.footer {
+  background: #000;
+  color: #ccc;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand,
+.footer-nav,
+.footer-sosmed {
+  flex: 1 1 250px;
+  min-width: 220px;
+}
+
+.footer-brand h3 {
+  color: #936897;
+  margin-bottom: 10px;
+}
+
+.footer-nav h4,
+.footer-sosmed h4 {
+  color: #936897;
+  margin-bottom: 10px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  margin-bottom: 8px;
+}
+
+.footer-nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-nav ul li a:hover {
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 18px;
+  color: #ccc;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 15px;
+  color: #777;
+  font-size: 13px;
+}
+
+/* Responsive: tampilan footer di HP */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-nav,
+  .footer-sosmed {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-nav ul li {
+    margin-bottom: 6px;
+  }
+}
+
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      nav.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ABK Knitting</h1>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+       <a href="index.html">Beranda</a>
+      <a href="tentang.html">Tentang Kami</a>
+      <a href="produksi.html">Produksi</a>
+      <a href="cara.html">Cara Pemesanan</a>
+      <a href="portofolio.html">Portofolio</a>
+      <a href="testimoni.html">Testimoni</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div>
+        <h2>HOME/TESTIMONI</h2>
+           </div>
+    </section>
+
+<section class="testimoni-section">
+  <h2>Testimoni Klien Kami</h2>
+  <div class="testimoni-grid">
+
+    <div class="testimoni-card">
+      <p>“Sangat Puas dengan Desain Kreatif! Konveksi Rajut Bandung berhasil menciptakan produk rajutan sesuai visi saya.”</p>
+      <div class="testimoni-footer">
+        <img src="https://i.pravatar.cc/60?img=11" alt="user">
+        <div>
+          <strong>Maria S</strong>
+          <small>Manajer Perusahaan Teknologi</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimoni-card">
+      <p>“Pelayanan Profesional dan Tepat Waktu! Konveksi Rajut Bandung sangat fleksibel menghadapi proyek-proyek berulang kami.”</p>
+      <div class="testimoni-footer">
+        <img src="https://i.pravatar.cc/60?img=20" alt="user">
+        <div>
+          <strong>Ardika P</strong>
+          <small>Pemilik Cafe Lokal</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimoni-card">
+      <p>“Produk Tiruan Desain Saya sangat terkesan karena hasil akhirnya bahkan lebih bagus. Desain mendekati ekspektasi dengan kualitas detail.”</p>
+      <div class="testimoni-footer">
+        <img src="https://i.pravatar.cc/60?img=8" alt="user">
+        <div>
+          <strong>Dian A</strong>
+          <small>Pengusaha Fashion Lokal</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimoni-card">
+      <p>“Kualitas Premium! Produknya rapi dan Konveksi Rajut Bandung sigap menerima revisi. Barang datang sesuai estimasi bahkan lebih cepat.”</p>
+      <div class="testimoni-footer">
+        <img src="https://i.pravatar.cc/60?img=5" alt="user">
+        <div>
+          <strong>Dad W</strong>
+          <small>Kepala Sekolah SD</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimoni-card">
+      <p>“Fleksibilitas Pesanan Luar Biasa! Sebagai pemilik toko kecil, saya sangat menghargai Konveksi Rajut Bandung dalam menerima pesanan kecil.”</p>
+      <div class="testimoni-footer">
+        <img src="https://i.pravatar.cc/60?img=22" alt="user">
+        <div>
+          <strong>Cindy L</strong>
+          <small>Pelaku UMKM Rajut</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimoni-card">
+      <p>“Partner Terbaik untuk Merchandise Event! Konveksi Rajut Bandung selalu mengirimkan hasil terbaik dalam waktu yang sangat mepet.”</p>
+      <div class="testimoni-footer">
+        <img src="https://i.pravatar.cc/60?img=15" alt="user">
+        <div>
+          <strong>Ricky Il</strong>
+          <small>Event Organizer</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+   <section class="konsultasi-section">
+  <h2><i class="fas fa-comments"></i> Yuk Konsultasikan Kebutuhan Anda</h2>
+  <p>Kami siap bantu Anda dalam proses makloon rajut — mulai dari perencanaan, produksi, hingga pengiriman. Hubungi kami langsung untuk konsultasi gratis via WhatsApp.</p>
+  <a href="https://wa.me/6281399981555" class="wa-button" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i> Hubungi Kami Sekarang
+  </a>
+</section>
+
+<section class="footer" id="kontak">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>ABK Knitting</h3>
+      <p>Jasa makloon rajut sweater, cardigan, dan aksesoris dari Bandung dengan kualitas terbaik dan harga bersaing.</p>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Navigasi</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang Kami</a></li>
+      <li><a href="produksi.html">Produksi</a></li>
+      <li><a href="cara.html">Cara Pemesanan</a></li>
+      <li><a href="portofolio.html">Portofolio</a></li>
+     <li><a href="testimoni.html">Testimoni</a></li>
+     <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-sosmed">
+      <h4>Ikuti Kami</h4>
+      <div class="social-icons">
+        <a href="https://wa.me/6281399981555" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/abk.knitting" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/abk.knitting" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://shopee.co.id/abk.knitting" target="_blank"><i class="fas fa-store"></i></a>
+        <a href="https://tiktok.com/@abk.knitting" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 ABK Knitting • All Rights Reserved</p>
+  </div>
+</section>
+
+
+  </main>
+</body>
+</html>

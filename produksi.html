@@ -6,14 +6,17 @@
   <title>ABK Knitting</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  
+
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #111;
       color: #f0f0f0;
       line-height: 1.6;
     }
+
     header {
       background-color: #000;
       color: #fff;
@@ -26,7 +29,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    
+
     nav {
       display: flex;
       gap: 15px;
@@ -57,15 +60,13 @@
     }
 
 
-
-
 .hero {
   display: flex;
   align-items: flex-start; /* arah vertikal atas */
   justify-content: flex-start; /* arah horizontal kiri */
   height: 100vh;
   padding: 90px 20px 0%; /* atas, kanan & kiri */
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('tentang.jpeg') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('produksi.jpeg') center/cover no-repeat;
 }
 
 .hero h2 {
@@ -86,239 +87,189 @@
   }
 }
 
-    .stats-section {
-  background: #1c1c1c;
+#produksi {
+  padding: 60px 20px;
   text-align: center;
-  padding: 60px 20px; /* <--- tambahkan padding kiri-kanan */
+  background: linear-gradient(135deg, #121212, #1a1a1a); /* gradasi gelap */
+  color: #f5f5f5;
 }
 
-@media (max-width: 768px) {
-  .stats-section {
-    padding: 40px 16px; /* di HP padding lebih kecil tapi tetap ada */
-  }
+#produksi h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  font-family: 'Lora', serif;
+  color: #936897; /* emas */
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
-    .stats-section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #936897;
-    }
-    .stats-grid {
+#produksi h2 span {
+  color: #ffffff;
+}
+
+.produksi-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* default 4 kolom desktop */
-  gap: 20px;
-  justify-items: center;
-  
+  grid-template-columns: repeat(2, 1fr); /* Default 2 kolom (HP) */
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-@media (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr); /* jadi 2 kolom di HP */
-    gap: 20px;
-    justify-content: center;
-  justify-items: center;
+.produksi-grid div {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  max-width: 160px;
+  margin: auto;
+}
+
+.produksi-grid div:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 20px rgba(104, 15, 96, 0.3); /* efek glow emas */
+}
+
+.produksi-grid img {
+  width: 100%;
+  height: auto;
+  max-height: 130px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.produksi-grid div:hover img {
+  transform: scale(1.08);
+}
+
+.produksi-grid p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #936897; /* emas */
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 768px) {
+  .produksi-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk tablet & desktop */
   }
 }
-    .stats-box {
-        width: 100%;
-    max-width: 150px; /* batasi lebar maksimal */
+
+#bahan-rajut .bahan-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 50px;
+  gap: 20px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#bahan-rajut .bahan-image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+#bahan-rajut .bahan-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+#bahan-rajut .bahan-text {
+  flex: 1 1 50%;
+  color: #eee;
+}
+
+#bahan-rajut .bahan-text h3 {
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+#bahan-rajut .bahan-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+#bahan-rajut .bahan-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  #bahan-rajut .bahan-row {
+    flex-direction: column;
     text-align: center;
-      background: #222;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      min-width: 200px;
-    }
-    .stats-box h3 {
-      font-size: 2rem;
-      color: #fff;
-    }
-    .stats-box p {
-      color: #ccc;
-      margin-top: 10px;
-    }
-    
-.tentang {
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #1a1a1a, #111);
-  color: #f0f0f0;
+  }
+
+  #bahan-rajut .bahan-row.reverse {
+    flex-direction: column;
+  }
+
+  #bahan-rajut .bahan-text {
+    padding: 0 10px;
+  }
 }
 
-.tentang-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
+
+.konsultasi-section {
+  background: linear-gradient(to right, #1c1c1c, #2a2a2a);
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 40px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-.tentang-text {
-  flex: 1 1 50%;
-  min-width: 300px;
-}
-
-.tentang-text h2 {
+.konsultasi-section h2 {
   font-size: 2rem;
-  color: #936897;
   margin-bottom: 15px;
+  color: #ffffff;
 }
 
-.tentang-text p {
+.konsultasi-section p {
   font-size: 1rem;
-  line-height: 1.8;
-  color: #ddd;
-  text-align: justify;
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+  line-height: 1.7;
 }
 
-.tentang-img {
-  flex: 1 1 40%;
-  min-width: 250px;
-  text-align: center;
+.wa-button {
+  background-color: #25D366;
+  color: #fff;
+  font-size: 18px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
 }
 
-.tentang-img img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+.wa-button i {
+  margin-right: 8px;
 }
 
-.komitmen {
-  padding: 60px 20px;
-  background: linear-gradient(to right, #1c1c1c, #111);
-  color: #f0f0f0;
+.wa-button:hover {
+  background-color: #1ebe5d;
 }
 
-.komitmen-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.komitmen-img {
-  flex: 1 1 40%;
-  text-align: center;
-}
-
-.komitmen-img img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-}
-
-.komitmen-text {
-  flex: 1 1 50%;
-  min-width: 300px;
-}
-
-.komitmen-text h2 {
-  font-size: 2rem;
-  color: #936897;
-  margin-bottom: 16px;
-}
-
-.komitmen-text p {
-  font-size: 1rem;
-  line-height: 1.8;
-  text-align: justify;
-  color: #ddd;
-}
-
-.alasan {
-  background: #1a1a1a;
-  color: #f0f0f0;
-  padding: 60px 20px;
-}
-
-.alasan-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.alasan-text {
-  flex: 1 1 50%;
-  min-width: 300px;
-}
-
-.alasan-text h2 {
-  font-size: 2rem;
-  color: #936897;
-  margin-bottom: 16px;
-}
-
-.alasan-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.alasan-list {
-  list-style: none;
-  padding: 0;
-}
-
-.alasan-list li {
-  margin-bottom: 12px;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.alasan-list i {
-  color: #25D366;
-  margin-right: 10px;
-}
-
-.alasan-img {
-  flex: 1 1 40%;
-  text-align: center;
-}
-
-.alasan-img img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
-
-
-      .konsultasi-section, .footer {
-      padding: 60px 20px;
-      text-align: center;
-    }
-      .konsultasi-section h2 {
-      font-size: 2rem;
-      color: #936897;
-      margin-bottom: 20px;
-    }
-      .konsultasi-section p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-    .wa-button {
-      margin-top: 20px;
-      background-color: #25D366;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-size: 1rem;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .footer {
+.footer {
   background: #000;
   color: #ccc;
   padding: 40px 20px 20px;
@@ -339,7 +290,6 @@
 .footer-sosmed {
   flex: 1 1 250px;
   min-width: 220px;
-  text-align: center; /* Tengah judul dan ikon */
 }
 
 .footer-brand h3 {
@@ -351,7 +301,6 @@
 .footer-sosmed h4 {
   color: #936897;
   margin-bottom: 10px;
-  justify-content: center;
 }
 
 .footer-nav ul {
@@ -377,7 +326,6 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 10px;
-  justify-content: center; /* Tengah ikon */
 }
 
 .social-icons a {
@@ -440,11 +388,12 @@
       }
       nav.active {
         display: flex;
-      } }
+      }
+    }
   </style>
 </head>
 <body>
-<header>
+  <header>
     <h1>ABK Knitting</h1>
     <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
       <span></span>
@@ -452,7 +401,7 @@
       <span></span>
     </div>
     <nav>
-       <a href="index.html">Beranda</a>
+      <a href="index.html">Beranda</a>
       <a href="tentang.html">Tentang Kami</a>
       <a href="produksi.html">Produksi</a>
       <a href="cara.html">Cara Pemesanan</a>
@@ -462,73 +411,56 @@
     </nav>
   </header>
 
-
-
   <main>
     <section class="hero" id="beranda">
       <div>
-        <h2>HOME/TENTANG KAMI</h2>
+        <h2>HOME/PRODUKSI</h2>
            </div>
     </section>
 
-    <section class="stats-section">
-      <h2>Data Kami</h2>
-      <div class="stats-grid">
-        <div class="stats-box"><h3>150+</h3><p>Konsumen</p></div>
-        <div class="stats-box"><h3>200+</h3><p>Order Selesai</p></div>
-        <div class="stats-box"><h3>30+</h3><p>Karyawan</p></div>
-        <div class="stats-box"><h3>12</h3><p>Mesin Rajut</p></div>
-      </div>
-    </section>
+ <section id="produksi">
+  <h2><span>Produksi</span> Kami</h2>
+  <div class="produksi-grid">
+    <div><img src="cardi.png" alt="Cardigan"><p>Cardigan</p></div>
+    <div><img src="rompi.png" alt="Rompi"><p>Rompi</p></div>
+    <div><img src="banda.png" alt="Bandana"><p>Bandana</p></div>
+    <div><img src="tas.png" alt="Tas"><p>Tas</p></div>
+    <div><img src="buni.png" alt="Bunnie"><p>Bunnie</p></div>
+    <div><img src="syal.png" alt="Syal"><p>Syal</p></div>
+  </div>
+</section>
 
-    <section class="tentang" id="tentang">
-  <div class="tentang-container">
-    <div class="tentang-text">
-      <h2>Tentang ABK Knitting</h2>
-      <p>ABK Knitting adalah penyedia jasa makloon rajut terpercaya dari Bandung. Kami melayani produksi cardigan, sweater, tas, syal, dan berbagai produk rajutan lainnya. Dengan kapasitas 1.500 pcs per bulan dan pengalaman lebih dari 5 tahun, kami siap membantu brand fashion dan UMKM.</p>
+<section id="bahan-rajut" style="padding: 60px 20px; background-color: #171717;">
+  <h2 style="text-align:center; font-size:2.4rem; color:#936897; margin-bottom:40px; font-family:'Lora',serif;">
+    Bahan <span style="color:#fff">Benang Rajut</span>
+  </h2>
+
+  <div class="bahan-row">
+    <div class="bahan-image"><img src="katun.png" alt="Benang Katun"></div>
+    <div class="bahan-text">
+      <h3>Benang Katun</h3>
+      <p>Benang katun memiliki tekstur lembut, nyaman dipakai, dan sangat cocok untuk produk rajut fashion seperti sweater & cardigan karena adem dan breathable.</p>
     </div>
-    <div class="tentang-img">
-      <img src="banner4.png" alt="Mesin Rajut ABK" />
+  </div>
+
+  <div class="bahan-row reverse">
+    <div class="bahan-image"><img src="poliester.png" alt="Benang Poliester"></div>
+    <div class="bahan-text">
+      <h3>Benang Poliester</h3>
+      <p>Jenis benang ini terkenal kuat, tahan lama, dan tidak mudah kusut. Sering digunakan untuk produk rajut yang membutuhkan ketahanan tinggi dan elastisitas.</p>
+    </div>
+  </div>
+
+  <div class="bahan-row">
+    <div class="bahan-image"><img src="acrylic.png" alt="Benang Acrylic"></div>
+    <div class="bahan-text">
+      <h3>Benang Acrylic</h3>
+      <p>Benang acrylic sering digunakan karena menyerupai wol tetapi lebih ringan. Cocok untuk rajutan dengan warna-warna cerah dan tahan luntur.</p>
     </div>
   </div>
 </section>
 
-
-   <section class="komitmen" id="komitmen">
-  <div class="komitmen-container">
-    <div class="komitmen-img">
-      <img src="banner3.png" alt="Komitmen ABK Knitting">
-    </div>
-    <div class="komitmen-text">
-      <h2>Komitmen Kami</h2>
-      <p>
-        Kami berkomitmen menghadirkan produk rajutan dengan kualitas terbaik, harga terjangkau, dan pengiriman tepat waktu. Dengan semangat konsistensi dan pelayanan yang ramah, kepuasan pelanggan adalah prioritas utama kami.
-      </p>
-    </div>
-  </div>
-</section>
-
-   <section class="alasan" id="alasan">
-  <div class="alasan-container">
-    <div class="alasan-text">
-      <h2>Mengapa Kami Mitra yang Tepat?</h2>
-      <p>Kami bukan hanya penyedia jasa, tetapi juga partner pertumbuhan bisnis Anda. ABK Knitting mendukung Anda dengan:</p>
-      <ul class="alasan-list">
-        <li><i class="fas fa-check-circle"></i> Berpengalaman lebih dari 5 tahun di industri rajut</li>
-        <li><i class="fas fa-industry"></i> Kapasitas produksi hingga 1.500 pcs per bulan</li>
-        <li><i class="fas fa-clock"></i> Proses produksi tepat waktu dan efisien</li>
-        <li><i class="fas fa-star"></i> Hasil rajutan rapi, konsisten, dan berkualitas tinggi</li>
-        <li><i class="fas fa-handshake"></i> Siap kerja sama jangka panjang untuk brand fashion dan UMKM</li>
-      </ul>
-    </div>
-    <div class="alasan-img">
-      <img src="banner2.jpg" alt="Kemitraan ABK Knitting">
-    </div>
-  </div>
-</section>
-
-
-      <section class="konsultasi-section">
+   <section class="konsultasi-section">
   <h2><i class="fas fa-comments"></i> Yuk Konsultasikan Kebutuhan Anda</h2>
   <p>Kami siap bantu Anda dalam proses makloon rajut — mulai dari perencanaan, produksi, hingga pengiriman. Hubungi kami langsung untuk konsultasi gratis via WhatsApp.</p>
   <a href="https://wa.me/6281399981555" class="wa-button" target="_blank" rel="noopener">
@@ -536,7 +468,7 @@
   </a>
 </section>
 
-   <section class="footer" id="kontak">
+<section class="footer" id="kontak">
   <div class="footer-container">
     <div class="footer-brand">
       <h3>ABK Knitting</h3>
@@ -572,6 +504,8 @@
     <p>&copy; 2025 ABK Knitting • All Rights Reserved</p>
   </div>
 </section>
+
+
   </main>
 </body>
 </html>

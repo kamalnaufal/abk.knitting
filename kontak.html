@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABK Knitting</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      margin: 4px 0;
+      width: 25px;
+      display: block;
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+
+.hero {
+  display: flex;
+  align-items: flex-start; /* arah vertikal atas */
+  justify-content: flex-start; /* arah horizontal kiri */
+  height: 100vh;
+  padding: 90px 20px 0%; /* atas, kanan & kiri */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('kontak.jpeg') center/cover no-repeat;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero {
+    padding-top: 100px; /* beri ruang lebih biar tak ketutup header */
+    padding-left: 16px;  /* sejajar dengan header di HP */
+    padding-right: 16px;
+  }
+}
+
+.contact-dark {
+  background-color: #1b1b1b;
+  color: #eee;
+  padding: 60px 20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.contact-info {
+  flex: 1 1 300px;
+}
+
+.contact-info h2 {
+  font-size: 1.8rem;
+  color: #936897;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #936897;
+}
+
+.contact-form {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background: #2d2d2d;
+  color: #fff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #936897;
+}
+
+.contact-form button {
+  background-color: #936897;
+  color: #1b1b1b;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #936897;
+}
+
+.map-embed iframe {
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}
+
+
+.konsultasi-section {
+  background: linear-gradient(to right, #1c1c1c, #2a2a2a);
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 40px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.konsultasi-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.konsultasi-section p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+  line-height: 1.7;
+}
+
+.wa-button {
+  background-color: #25D366;
+  color: #fff;
+  font-size: 18px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+.wa-button i {
+  margin-right: 8px;
+}
+
+.wa-button:hover {
+  background-color: #1ebe5d;
+}
+
+.footer {
+  background: #000;
+  color: #ccc;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand,
+.footer-nav,
+.footer-sosmed {
+  flex: 1 1 250px;
+  min-width: 220px;
+}
+
+.footer-brand h3 {
+  color: #936897;
+  margin-bottom: 10px;
+}
+
+.footer-nav h4,
+.footer-sosmed h4 {
+  color: #936897;
+  margin-bottom: 10px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  margin-bottom: 8px;
+}
+
+.footer-nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-nav ul li a:hover {
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 18px;
+  color: #ccc;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 15px;
+  color: #777;
+  font-size: 13px;
+}
+
+/* Responsive: tampilan footer di HP */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-nav,
+  .footer-sosmed {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-nav ul li {
+    margin-bottom: 6px;
+  }
+}
+
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      nav.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ABK Knitting</h1>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="tentang.html">Tentang Kami</a>
+      <a href="produksi.html">Produksi</a>
+      <a href="cara.html">Cara Pemesanan</a>
+      <a href="portofolio.html">Portofolio</a>
+      <a href="testimoni.html">Testimoni</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div>
+        <h2>HOME/KONTAK</h2>
+           </div>
+    </section>
+
+<section class="contact-dark">
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2>Konsultasi Bersama Kami</h2>
+      <p>Hubungi Kami Hari Ini dan Dapatkan Penawaran Khusus untuk Kebutuhan Konveksi Anda!</p>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> Jl. Balimbing No.13, Bandung</li>
+        <li><i class="fas fa-phone"></i> 082120000024</li>
+        <li><i class="fas fa-phone"></i> 082120000021</li>
+        <li><i class="fas fa-envelope"></i> hello@konveksirajutbandung.com</li>
+      </ul>
+    </div>
+
+    <form class="contact-form" action="#" method="post">
+      <input type="text" name="name" placeholder="Nama" required>
+      <input type="text" name="phone" placeholder="No. Telepon" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Pesan" rows="4" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+ <div class="map-embed">
+  <iframe 
+    src="https://www.google.com/maps/embed/v1/place?q=maklun%20rajut%20abk%20knitting&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+
+   <section class="konsultasi-section">
+  <h2><i class="fas fa-comments"></i> Yuk Konsultasikan Kebutuhan Anda</h2>
+  <p>Kami siap bantu Anda dalam proses makloon rajut — mulai dari perencanaan, produksi, hingga pengiriman. Hubungi kami langsung untuk konsultasi gratis via WhatsApp.</p>
+  <a href="https://wa.me/6281399981555" class="wa-button" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i> Hubungi Kami Sekarang
+  </a>
+</section>
+
+<section class="footer" id="kontak">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>ABK Knitting</h3>
+      <p>Jasa makloon rajut sweater, cardigan, dan aksesoris dari Bandung dengan kualitas terbaik dan harga bersaing.</p>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Navigasi</h4>
+      <ul>
+         <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang Kami</a></li>
+      <li><a href="produksi.html">Produksi</a></li>
+      <li><a href="cara.html">Cara Pemesanan</a></li>
+      <li><a href="portofolio.html">Portofolio</a></li>
+     <li><a href="testimoni.html">Testimoni</a></li>
+     <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-sosmed">
+      <h4>Ikuti Kami</h4>
+      <div class="social-icons">
+        <a href="https://wa.me/6281399981555" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/abk.knitting" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/abk.knitting" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://shopee.co.id/abk.knitting" target="_blank"><i class="fas fa-store"></i></a>
+        <a href="https://tiktok.com/@abk.knitting" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 ABK Knitting • All Rights Reserved</p>
+  </div>
+</section>
+
+
+  </main>
+</body>
+</html>
