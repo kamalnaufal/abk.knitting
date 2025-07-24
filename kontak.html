@@ -355,6 +355,26 @@
     }
   </style>
 </head>
+<script>
+  function sendWhatsApp() {
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    var waNumber = "6281399981555"; // Nomor WA tujuan
+    var text =
+      "Halo ABK Knitting,%0A%0A" +
+      "*Nama:* " + name + "%0A" +
+      "*No. Telepon:* " + phone + "%0A" +
+      "*Email:* " + email + "%0A" +
+      "*Pesan:* " + message;
+
+    var url = "https://wa.me6285720309608/" + waNumber + "?text=" + encodeURIComponent(text);
+    window.open(url, "_blank");
+  }
+</script>
+
 <body>
   <header>
     <h1>ABK Knitting</h1>
@@ -394,14 +414,14 @@
       </ul>
     </div>
 
-    <form class="contact-form" action="#" method="post">
-      <input type="text" name="name" placeholder="Nama" required>
-      <input type="text" name="phone" placeholder="No. Telepon" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Pesan" rows="4" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
+   <form class="contact-form" onsubmit="sendWhatsApp(); return false;">
+  <input type="text" id="name" placeholder="Nama" required>
+  <input type="text" id="phone" placeholder="No. Telepon" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <textarea id="message" placeholder="Pesan" rows="4" required></textarea>
+  <button type="submit">Kirim via WhatsApp</button>
+</form>
+
 
  <div class="map-embed">
   <iframe 
